@@ -6,3 +6,8 @@ export interface Card {
   isLiked?: boolean
   isAddedToCart?: boolean
 }
+
+export interface FetchFiltersParams {
+  sortBy: string
+  title?: string
+}
