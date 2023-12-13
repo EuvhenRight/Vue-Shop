@@ -3,11 +3,17 @@ export interface Card {
   imageUrl: string
   title: string
   price: number
-  isLiked?: boolean
+  isFavorite?: boolean
   isAddedToCart?: boolean
+  favoritesId?: number
 }
 
 export interface FetchFiltersParams {
   sortBy: string
   title?: string
+}
+
+export interface CardFavorite {
+  id?: number
+  parentId?: number
 }

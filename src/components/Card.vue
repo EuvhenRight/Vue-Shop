@@ -2,14 +2,20 @@
 import { defineProps } from 'vue'
 import { Card as CardType } from '@/components/types/types'
 
-const props = defineProps<CardType>()
+const props = defineProps<CardType & { onClickFavorite?: () => void }>()
 </script>
 
 <template>
   <div
     class="relative bg-white border border-slate-100 rounded-3xl p-8 cursor-pointer hover:shadow-xl hover:-translate-y-2 transition"
   >
-    <img class="absolute top-8 left-8" :src="isLiked ? '/like-2.svg' : '/like-1.svg'" alt="Like" />
+    <img
+      v-if="onClickFavorite"
+      class="absolute top-8 left-8"
+      :src="isFavorite ? '/like-2.svg' : '/like-1.svg'"
+      @click="onClickFavorite"
+      alt="Like"
+    />
     <img :src="imageUrl" alt="Sneakers" />
     <p class="mt-2">{{ title }}</p>
     <div class="flex justify-between mt-5">

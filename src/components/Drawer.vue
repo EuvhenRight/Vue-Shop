@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import CartItemList from './CartItemList.vue'
+import { defineEmits } from 'vue'
+
+const emit = defineEmits(['closeDrawer'])
 </script>
 
 <template>
@@ -8,6 +11,7 @@ import CartItemList from './CartItemList.vue'
       <div class="flex gap-5">
         <h2 class="text-2xl font-bold flex items-center gap-5">
           <svg
+            @click="emit('closeDrawer')"
             class="rotate-180 hover:-translate-x-1 opacity-30 hover:opacity-100 transition cursor-pointer"
             width="16"
             height="14"
