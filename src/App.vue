@@ -8,8 +8,9 @@ import Drawer from './components/Drawer.vue'
 import axios from 'axios'
 
 const items = ref<CardType[]>([])
+const cart = ref<CardType[]>([])
 
-const drawerStatus = ref(false)
+const drawerStatus = ref<boolean>(false)
 
 const openDrawer = () => {
   drawerStatus.value = true
@@ -33,6 +34,26 @@ const onChangeSelect = (event: Event) => {
 const onChangeSearch = (event: Event) => {
   const searchInput = event.target as HTMLSelectElement
   filters.searchQuery = searchInput.value
+}
+
+const onAddToCart = (item: CardType) => {
+  cart.value.push(item)
+  item.isAddedToCart = true
+  console.log(cart.value)
+}
+
+const onRemoveFromCart = (item: CardType) => {
+  cart.value.splice(cart.value.indexOf(item), 1)
+  item.isAddedToCart = false
+  console.log(cart.value)
+}
+
+const onClickPlusCard = (item: CardType) => {
+  if (!item.isAddedToCart) {
+    onAddToCart(item)
+  } else {
+    onRemoveFromCart(item)
+  }
 }
 
 const addOnFavorite = async (item: CardType) => {
@@ -109,6 +130,11 @@ const fetchFavorites = async () => {
   }
 }
 
+provide('cart', {
+  cart,
+  onRemoveFromCart
+})
+
 // componentDidMount the first time
 onMounted(async () => {
   await fetchFilters(), await fetchFavorites()
@@ -145,7 +171,11 @@ watch(filters, fetchFilters)
         </div>
       </div>
     </div>
-    <CardList :items="items" @add-on-favorite="addOnFavorite" />
+    <CardList
+      :items="items"
+      @add-on-favorite="addOnFavorite"
+      @on-click-plus-card="onClickPlusCard"
+    />
   </div>
 </template>
 

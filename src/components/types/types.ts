@@ -17,3 +17,9 @@ export interface CardFavorite {
   id?: number
   parentId?: number
 }
+
+export interface CardActionType {
+  onClickFavorite?: () => void
+  onClickPlusCard?: () => void
+  onRemoveFromCart?: () => void
+}

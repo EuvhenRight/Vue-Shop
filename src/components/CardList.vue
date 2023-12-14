@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Card from './Card.vue'
-import { defineProps, defineEmits } from 'vue'
+import { defineEmits } from 'vue'
 
 import { Card as CardType } from '@/components/types/types'
 
@@ -8,7 +8,7 @@ const props = defineProps<{
   items: CardType[]
 }>()
 
-const emit = defineEmits(['addOnFavorite'])
+const emit = defineEmits(['addOnFavorite', 'onClickPlusCard'])
 </script>
 
 <template>
@@ -20,9 +20,10 @@ const emit = defineEmits(['addOnFavorite'])
       :imageUrl="item.imageUrl"
       :title="item.title"
       :price="item.price"
-      :isAddedToCart="false"
+      :isAddedToCart="item.isAddedToCart"
       :isFavorite="item.isFavorite"
-      :onClickFavorite="() => emit('addOnFavorite', item)"
+      :on-click-favorite="() => emit('addOnFavorite', item)"
+      :on-click-plus-card="() => emit('onClickPlusCard', item)"
     />
   </div>
 </template>

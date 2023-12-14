@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import { Card as CardType } from '@/components/types/types'
+import { Card as CardType, CardActionType } from '@/components/types/types'
 
-const props = defineProps<CardType & { onClickFavorite?: () => void }>()
+const props = defineProps<CardType & CardActionType>()
 </script>
 
 <template>
@@ -23,7 +22,13 @@ const props = defineProps<CardType & { onClickFavorite?: () => void }>()
         <span class="text-slate-400">Price:</span>
         <b>{{ price }} euros</b>
       </div>
-      <img :src="isAddedToCart ? '/checked.svg' : '/plus.svg'" alt="Add" />
+      <img
+        v-if="onClickPlusCard"
+        @click="onClickPlusCard"
+        class="cursor-pointer"
+        :src="isAddedToCart ? '/checked.svg' : '/plus.svg'"
+        alt="Add"
+      />
     </div>
   </div>
 </template>
