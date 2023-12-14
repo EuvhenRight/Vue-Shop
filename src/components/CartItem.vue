@@ -4,7 +4,7 @@ import { Card as CardType } from './types/types'
 
 const emit = defineEmits(['onRemoveFromCart'])
 
-const props = defineProps<CardType>()
+defineProps<CardType>()
 </script>
 
 <template>

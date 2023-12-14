@@ -2,6 +2,10 @@
 import { defineEmits } from 'vue'
 
 const emit = defineEmits(['openDrawer'])
+
+defineProps({
+  totalPrice: Number
+})
 </script>
 
 <template>
@@ -19,7 +23,7 @@ const emit = defineEmits(['openDrawer'])
         class="flex items-center gap-3 cursor-pointer hover:text-black"
       >
         <img src="/cart.svg" alt="Cart" />
-        <b>500 euros</b>
+        <b>{{ totalPrice }} $</b>
       </li>
       <li class="flex items-center gap-3 text-slate-400 cursor-pointer hover:text-black">
         <img src="/heart.svg" alt="Wishlist" />

@@ -3,6 +3,11 @@ import CartItemList from './CartItemList.vue'
 import { defineEmits } from 'vue'
 
 const emit = defineEmits(['closeDrawer'])
+
+defineProps({
+  totalPrice: Number,
+  vatPrice: Number
+})
 </script>
 
 <template>
@@ -42,12 +47,12 @@ const emit = defineEmits(['closeDrawer'])
         <div class="flex gap-2">
           <span class="text-slate-400">Total:</span>
           <div class="flex-1 border-b border-dashed"></div>
-          <b>500 euros</b>
+          <b>{{ totalPrice }} $</b>
         </div>
         <div class="flex gap-2 mt-4">
           <span class="text-slate-400">Tax 5%:</span>
           <div class="flex-1 border-b border-dashed"></div>
-          <b>25 euros</b>
+          <b>{{ vatPrice }} $</b>
         </div>
         <button
           disabled="true"

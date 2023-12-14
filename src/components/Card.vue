@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Card as CardType, CardActionType } from '@/components/types/types'
 
-const props = defineProps<CardType & CardActionType>()
+defineProps<CardType & CardActionType>()
 </script>
 
 <template>

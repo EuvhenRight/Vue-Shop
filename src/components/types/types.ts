@@ -21,5 +21,4 @@ export interface CardFavorite {
 export interface CardActionType {
   onClickFavorite?: () => void
   onClickPlusCard?: () => void
-  onRemoveFromCart?: () => void
 }

@@ -4,7 +4,7 @@ import { defineEmits } from 'vue'
 
 import { Card as CardType } from '@/components/types/types'
 
-const props = defineProps<{
+defineProps<{
   items: CardType[]
 }>()
 
