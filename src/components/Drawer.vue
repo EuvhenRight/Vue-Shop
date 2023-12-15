@@ -2,11 +2,12 @@
 import CartItemList from './CartItemList.vue'
 import { defineEmits } from 'vue'
 
-const emit = defineEmits(['closeDrawer'])
+const emit = defineEmits(['closeDrawer', 'createOrder'])
 
 defineProps({
   totalPrice: Number,
-  vatPrice: Number
+  vatPrice: Number,
+  cardButtonDisabled: Boolean
 })
 </script>
 
@@ -55,7 +56,8 @@ defineProps({
           <b>{{ vatPrice }} $</b>
         </div>
         <button
-          disabled="true"
+          @click="() => emit('createOrder')"
+          :disabled="cardButtonDisabled"
           class="bg-lime-500 text-white w-full py-4 rounded-xl mt-4 disabled:bg-slate-400 transition hover:bg-lime-600 active:bg-lime-700"
         >
           Create Order

@@ -22,3 +22,8 @@ export interface CardActionType {
   onClickFavorite?: () => void
   onClickPlusCard?: () => void
 }
+
+export interface OrderType {
+  items: Card[]
+  totalPrice: number
+}
