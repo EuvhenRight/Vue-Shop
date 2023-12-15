@@ -11,7 +11,7 @@ const { cart, onRemoveFromCart }: { cart: CardType[]; onRemoveFromCart: (item: C
 </script>
 
 <template>
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2" v-auto-animate>
     <CartItem
       v-for="item in cart"
       :key="item.id"

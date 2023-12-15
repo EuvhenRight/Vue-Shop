@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CartItemList from './CartItemList.vue'
 import { defineEmits } from 'vue'
+import InfoBlock from './InfoBlock.vue'
 
 const emit = defineEmits(['closeDrawer', 'createOrder'])
 
@@ -13,7 +14,7 @@ defineProps({
 
 <template>
   <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 z-10">
-    <div class="bg-white fixed top-0 right-0 h-full w-96 z-20 p-8 flex flex-col justify-between">
+    <div class="bg-white fixed top-0 right-0 h-full w-96 z-20 p-8">
       <div class="flex gap-5">
         <h2 class="text-2xl font-bold flex items-center gap-5">
           <svg
@@ -43,25 +44,35 @@ defineProps({
           Cart
         </h2>
       </div>
-      <CartItemList />
-      <div class="flex flex-col gap-2 my-7">
-        <div class="flex gap-2">
-          <span class="text-slate-400">Total:</span>
-          <div class="flex-1 border-b border-dashed"></div>
-          <b>{{ totalPrice }} $</b>
+
+      <div v-if="!totalPrice" class="flex flex-col h-full items-center justify-center">
+        <InfoBlock
+          title="Cart empty"
+          description="Add items to your cart"
+          imageUrl="/package-icon.png"
+        />
+      </div>
+      <div v-else="totalPrice" class="flex flex-col h-full justify-between">
+        <CartItemList />
+        <div class="flex flex-col gap-2 my-7">
+          <div class="flex gap-2">
+            <span class="text-slate-400">Total:</span>
+            <div class="flex-1 border-b border-dashed"></div>
+            <b>{{ totalPrice }} $</b>
+          </div>
+          <div class="flex gap-2 mt-4">
+            <span class="text-slate-400">Tax 5%:</span>
+            <div class="flex-1 border-b border-dashed"></div>
+            <b>{{ vatPrice }} $</b>
+          </div>
+          <button
+            @click="() => emit('createOrder')"
+            :disabled="cardButtonDisabled"
+            class="bg-lime-500 text-white w-full py-4 rounded-xl mt-4 disabled:bg-slate-400 transition hover:bg-lime-600 active:bg-lime-700"
+          >
+            Create Order
+          </button>
         </div>
-        <div class="flex gap-2 mt-4">
-          <span class="text-slate-400">Tax 5%:</span>
-          <div class="flex-1 border-b border-dashed"></div>
-          <b>{{ vatPrice }} $</b>
-        </div>
-        <button
-          @click="() => emit('createOrder')"
-          :disabled="cardButtonDisabled"
-          class="bg-lime-500 text-white w-full py-4 rounded-xl mt-4 disabled:bg-slate-400 transition hover:bg-lime-600 active:bg-lime-700"
-        >
-          Create Order
-        </button>
       </div>
     </div>
   </div>

@@ -15,7 +15,7 @@ export interface FetchFiltersParams {
 
 export interface CardFavorite {
   id?: number
-  parentId?: number
+  item_id?: number
 }
 
 export interface CardActionType {
@@ -26,4 +26,11 @@ export interface CardActionType {
 export interface OrderType {
   items: Card[]
   totalPrice: number
+}
+
+export interface CardListProps {
+  cart: Card[]
+  onAddToCart: (item: Card) => void
+  onRemoveFromCart: (item: Card) => void
+  addToFavorites: (item: Card) => void
 }

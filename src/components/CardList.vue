@@ -4,15 +4,13 @@ import { defineEmits } from 'vue'
 
 import { Card as CardType } from '@/components/types/types'
 
-defineProps<{
-  items: CardType[]
-}>()
+defineProps<{ items: CardType[] }>()
 
 const emit = defineEmits(['addOnFavorite', 'onClickPlusCard'])
 </script>
 
 <template>
-  <div class="grid grid-cols-4 gap-5 p-5">
+  <div class="grid grid-cols-4 gap-5 p-5" v-auto-animate>
     <Card
       v-for="item in items"
       :id="item.id"
