@@ -1,15 +1,46 @@
 <script setup lang="ts">
 import CartItemList from './CartItemList.vue'
-import { defineEmits } from 'vue'
+import { computed, inject, ref, Ref } from 'vue'
 import InfoBlock from './InfoBlock.vue'
+import axios from 'axios'
+import { Card as CardType } from './types/types'
 
-const emit = defineEmits(['closeDrawer', 'createOrder'])
+const isCreatingOrders = ref<boolean>(false)
+const isOrderId = ref<number>()
 
-defineProps({
-  totalPrice: Number,
-  vatPrice: Number,
-  cardButtonDisabled: Boolean
+const { cart, closeDrawer }: { cart: Ref<CardType[]>; closeDrawer: () => void } = inject('cart', {
+  cart: ref([]),
+  closeDrawer: () => {}
 })
+
+console.log(cart, 'cart')
+
+const props = defineProps({
+  totalPrice: Number,
+  vatPrice: Number
+})
+
+const cardButtonDisabled = computed(() => {
+  return cart.value.length === 0 || isCreatingOrders.value ? true : false
+})
+
+const createOrder = async () => {
+  try {
+    isCreatingOrders.value = true
+    const { data } = await axios.post('https://0c4caff991af5fa7.mokky.dev/orders', {
+      items: cart.value,
+      totalPrice: props.totalPrice
+    })
+
+    cart.value = []
+
+    isOrderId.value = data.id
+  } catch (e) {
+    console.error(e)
+  } finally {
+    isCreatingOrders.value = false
+  }
+}
 </script>
 
 <template>
@@ -18,7 +49,7 @@ defineProps({
       <div class="flex gap-5">
         <h2 class="text-2xl font-bold flex items-center gap-5">
           <svg
-            @click="emit('closeDrawer')"
+            @click="closeDrawer"
             class="rotate-180 hover:-translate-x-1 opacity-30 hover:opacity-100 transition cursor-pointer"
             width="16"
             height="14"
@@ -45,11 +76,18 @@ defineProps({
         </h2>
       </div>
 
-      <div v-if="!totalPrice" class="flex flex-col h-full items-center justify-center">
+      <div v-if="!totalPrice && isOrderId" class="flex flex-col h-full items-center justify-center">
         <InfoBlock
+          v-if="!totalPrice && !isOrderId"
           title="Cart empty"
           description="Add items to your cart"
           imageUrl="/package-icon.png"
+        />
+        <InfoBlock
+          v-if="isOrderId"
+          title="Order created"
+          :description="`Your order №${isOrderId} will be processed soon`"
+          imageUrl="/order-success-icon.png"
         />
       </div>
       <div v-else="totalPrice" class="flex flex-col h-full justify-between">
@@ -66,7 +104,7 @@ defineProps({
             <b>{{ vatPrice }} $</b>
           </div>
           <button
-            @click="() => emit('createOrder')"
+            @click="createOrder"
             :disabled="cardButtonDisabled"
             class="bg-lime-500 text-white w-full py-4 rounded-xl mt-4 disabled:bg-slate-400 transition hover:bg-lime-600 active:bg-lime-700"
           >
