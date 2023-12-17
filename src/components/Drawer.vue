@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import CartItemList from './CartItemList.vue'
-import { computed, inject, ref, Ref } from 'vue'
+import { computed, inject, ref, Ref, defineProps } from 'vue'
 import InfoBlock from './InfoBlock.vue'
 import axios from 'axios'
-import { Card as CardType } from './types/types'
+import type { Card as CardType } from './types/types'
 
 const isCreatingOrders = ref<boolean>(false)
 const isOrderId = ref<number>()
@@ -12,8 +12,6 @@ const { cart, closeDrawer }: { cart: Ref<CardType[]>; closeDrawer: () => void } 
   cart: ref([]),
   closeDrawer: () => {}
 })
-
-console.log(cart, 'cart')
 
 const props = defineProps({
   totalPrice: Number,

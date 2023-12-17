@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import CartItem from './CartItem.vue'
 import { inject } from 'vue'
-import { Card as CardType } from './types/types'
+import type { Card as CardType } from './types/types'
 
 const { cart, onRemoveFromCart }: { cart: CardType[]; onRemoveFromCart: (item: CardType) => void } =
   inject('cart', {

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Card as CardType, CardActionType } from '@/components/types/types'
+import { defineProps } from 'vue'
+import type { Card as CardType, CardActionType } from '@/components/types/types'
 
 defineProps<CardType & CardActionType>()
 </script>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { defineProps } from 'vue'
+
 defineProps({
   imageUrl: String,
   title: String,

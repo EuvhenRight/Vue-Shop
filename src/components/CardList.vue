@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Card from './Card.vue'
-import { defineEmits } from 'vue'
+import { defineEmits, defineProps } from 'vue'
 
-import { Card as CardType } from '@/components/types/types'
+import type { Card as CardType } from '@/components/types/types'
 
 defineProps<{ items: CardType[] }>()
 

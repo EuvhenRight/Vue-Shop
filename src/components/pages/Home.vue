@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FetchFiltersParams, CardFavorite, Card as CardType } from '../types/types'
+import type { FetchFiltersParams, CardFavorite, Card as CardType } from '../types/types'
 import CardList from '../CardList.vue'
 import axios from 'axios'
 import { ref, reactive, onMounted, watch, provide, inject } from 'vue'

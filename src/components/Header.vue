@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineEmits } from 'vue'
+import { defineEmits, defineProps } from 'vue'
 
 const emit = defineEmits(['openDrawer'])
 

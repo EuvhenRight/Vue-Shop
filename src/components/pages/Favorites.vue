@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CardList from '../CardList.vue'
-import { Card as CardType, CardListProps } from '@/components/types/types'
+import type { Card as CardType, CardListProps } from '@/components/types/types'
 import axios from 'axios'
 import { ref, onMounted, inject } from 'vue'
 
