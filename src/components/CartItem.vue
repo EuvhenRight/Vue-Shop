@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineEmits } from 'vue'
-import { Card as CardType } from './types/types'
+import { type Card as CardType } from './types/types'
 
 const emit = defineEmits(['onRemoveFromCart'])
 
