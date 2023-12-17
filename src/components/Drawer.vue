@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import CartItemList from './CartItemList.vue'
-import { computed, inject, ref, Ref, defineProps } from 'vue'
+import { computed, inject, ref, defineProps } from 'vue'
 import InfoBlock from './InfoBlock.vue'
 import axios from 'axios'
 import type { Card as CardType } from './types/types'
+import type { Ref } from 'vue'
 
 const isCreatingOrders = ref<boolean>(false)
 const isOrderId = ref<number>()

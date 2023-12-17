@@ -3,7 +3,7 @@ import type { FetchFiltersParams, CardFavorite, Card as CardType } from '../type
 import CardList from '../CardList.vue'
 import axios from 'axios'
 import { ref, reactive, onMounted, watch, provide, inject } from 'vue'
-
+import type { Ref } from 'vue'
 const {
   cart,
   onAddToCart,
@@ -18,7 +18,7 @@ const {
   onRemoveFromCart: () => {}
 })
 
-const items: CardType[] = inject('items')
+const items: Ref<CardType[]> = inject('items')
 
 //state to store filters
 const filters = reactive({
