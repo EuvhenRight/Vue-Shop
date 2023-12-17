@@ -4,6 +4,7 @@
   "exclude": ["node_modules"],
   "compilerOptions": {
     "composite": true,
+    "ignoreDeprecations": "5.0",
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
