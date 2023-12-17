@@ -3,6 +3,8 @@
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "exclude": ["node_modules"],
   "compilerOptions": {
+    "importsNotUsedAsValues": "remove",
+    "preserveValueImports": false,
     "composite": true,
     "ignoreDeprecations": "5.0",
     "noEmit": true,

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, provide, ref, watch } from 'vue'
 
-import { Card as CardType } from '@/components/types/types'
+import { type Card as CardType } from '@/components/types/types'
 import Header from './components/Header.vue'
 import Drawer from './components/Drawer.vue'
 
