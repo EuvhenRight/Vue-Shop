@@ -1,12 +1,23 @@
-# DayPatron Gun Care Line Website
+# Shop of Sneakers
 
 [Click here for the Demo version](vue-shop-euvhenright.vercel.app)
 
 Welcome to Shop of Sneakers.
 
+## Design
+
 ![Design](/public/Screenshot_1.png)
+
+## Cart
+
 ![Cart](/public/Screenshot_2.png)
+
+## Order
+
 ![Order](/public/Screenshot_3.png)
+
+## Page Favorites
+
 ![Features](/public/Screenshot_4.png)
 
 ## Project Overview
@@ -55,7 +66,7 @@ VueShop-Sneakers
 
 <p align="left">
   <a href="https://vuejs.org/" target="_blank" rel="noreferrer">
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdagomez.medium.com%2Fvue-3-basics-camera-and-screenshot-component-ac9af7d902f2&psig=AOvVaw2Zj5tsB7SCHIFVUKcGe3l3&ust=1702990879828000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKDJzsiFmYMDFQAAAAAdAAAAABAD" alt="Vue" width="100" height="100"/>
+    <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*Da7-kOCzpKfrWPDkk4luSQ.png" alt="Vue" width="100" height="100"/>
   </a>
   <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
     <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ficon-icons.com%2Ficon%2Ftailwindcss-logo%2F170649&psig=AOvVaw1JRqX0qT9DM5sH-WRw0r-r&ust=1702991039479000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPC4m6KGmYMDFQAAAAAdAAAAABAD" alt="Tailwind" width="100" height="100"/>
