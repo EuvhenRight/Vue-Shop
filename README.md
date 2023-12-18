@@ -1,40 +1,71 @@
-# vue-shop
+# DayPatron Gun Care Line Website
 
-This template should help get you started developing with Vue 3 in Vite.
+[Click here for the Demo version](vue-shop-euvhenright.vercel.app)
 
-## Recommended IDE Setup
+Welcome to Shop of Sneakers.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+![Design](/public/Screenshot_1.png)
+![Cart](/public/Screenshot_2.png)
+![Order](/public/Screenshot_3.png)
+![Features](/public/Screenshot_4.png)
 
-## Type Support for `.vue` Imports in TS
+## Project Overview
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+My first Project on Vue.js with TypeScript. and Tailwind CSS.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## Features
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- **Page Favorites:** Add to Cart, Order, and Checkout.
 
-## Customize configuration
+- **Cart:** Tou can do Order.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- **Search:** You can find your favorite Sneakers.
 
-## Project Setup
+## Code Structure
 
-```sh
-npm install
+```
+VueShop-Sneakers
+│
+├── public
+│       └── sneakers
+│
+└── src
+    ├── components
+    │   ├── pages
+    │   │     ├── Favorites.vue
+    │   │     └── Home.vue
+    │   │
+    │   ├── types
+    │   │     └── types.ts
+    │   │
+    │   ├── Card.vue
+    │   ├── CardList.vue
+    │   ├── CartList.vue
+    │   ├── CartItemList.vue
+    │   ├── Drawer.vue
+    │   ├── Header.vue
+    │   └── InfoBlock.vue
+    │
+    ├── App.vue
+    └── main.ts
+
 ```
 
-### Compile and Hot-Reload for Development
+## Tech Stack
 
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+<p align="left">
+  <a href="https://vuejs.org/" target="_blank" rel="noreferrer">
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fdagomez.medium.com%2Fvue-3-basics-camera-and-screenshot-component-ac9af7d902f2&psig=AOvVaw2Zj5tsB7SCHIFVUKcGe3l3&ust=1702990879828000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKDJzsiFmYMDFQAAAAAdAAAAABAD" alt="Vue" width="100" height="100"/>
+  </a>
+  <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ficon-icons.com%2Ficon%2Ftailwindcss-logo%2F170649&psig=AOvVaw1JRqX0qT9DM5sH-WRw0r-r&ust=1702991039479000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCPC4m6KGmYMDFQAAAAAdAAAAABAD" alt="Tailwind" width="100" height="100"/>
+  </a>
+  <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="HTML5" width="100" height="100"/>
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="100" height="100" />
+  </a>
+  <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonduck.com%2Ficons%2F95017%2Ftypescript-icon&psig=AOvVaw1sstm9GeZ4rlJCgYThBoCY&ust=1702991202138000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCKCtp-OGmYMDFQAAAAAdAAAAABAE" alt="TypeScript" width="100" height="100" />
+</p>
