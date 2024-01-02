@@ -1,6 +1,6 @@
 # Shop of Sneakers
 
-[Click here for the Demo version](vue-shop-euvhenright.vercel.app)
+[Click here for the Demo version](https://vue-shop-euvhenright.vercel.app/)
 
 Welcome to Shop of Sneakers.
 
